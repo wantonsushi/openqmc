@@ -87,6 +87,9 @@ bool run(const char* measurement, int nsamples, int ndims, int* out)
 	void* cache;
 	OQMC_ALLOCATE(&cache, Sampler::cacheSize);
 
+	// Warm up, so one time device setup is not timed below.
+	OQMC_LAUNCH(kernal<Sampler>, 0, 0, cache);
+
 	const auto timeInit =
 	    benchmark([cache]() { Sampler::initialiseCache(cache); });
 
