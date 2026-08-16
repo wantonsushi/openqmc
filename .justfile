@@ -41,7 +41,7 @@
 
 # build docs
 @docs:
-  doxygen
+  scripts/check-documentation.sh
 
 # remove build and reset
 @clean:
