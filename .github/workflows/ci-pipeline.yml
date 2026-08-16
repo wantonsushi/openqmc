@@ -34,8 +34,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: cachix/install-nix-action@v25
-      - run: curl -L -O https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.4.0/doxygen-awesome.css
-      - run: curl -L -O https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.4.0/doxygen-awesome-sidebar-only.css
       - run: nix develop -ic scripts/check-documentation.sh
 
   install:
